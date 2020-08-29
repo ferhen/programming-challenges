@@ -7,7 +7,7 @@ export default function nameBook(names: string[]): boolean {
 
     for (const [index, name] of sortedNames.entries()) {
         for (let pointerIndex = index + 1; pointerIndex < sortedNames.length; pointerIndex++) {
-            if (name.includes(names[pointerIndex])) {
+            if (name.startsWith(names[pointerIndex])) {
                 return false;
             }
         }

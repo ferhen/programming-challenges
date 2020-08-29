@@ -6,8 +6,13 @@ describe('checkNameBookConsistency', () => {
         const result = nameBook(['bob', 'john', 'claire', 'johnson']);
         expect(result).equal(false);
     });
+
     it('shouldBeTrue', () => {
         const result = nameBook(['alice', 'bob']);
         expect(result).equal(true);
+    });
+
+    it('shouldThrowWhenOnlyOneName', () => {
+        expect(() => nameBook(['alice'])).to.throw('At least two names are required');
     });
 });

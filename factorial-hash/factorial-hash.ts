@@ -1,4 +1,7 @@
 export default function factorialHash(value: bigint): bigint {
+    if (value < 0n) {
+        throw 'Value must be positive';
+    }
     if (value === 0n || value === 1n) {
         return 1n;
     }
@@ -7,6 +10,9 @@ export default function factorialHash(value: bigint): bigint {
 
 // slower for large numbers
 export function factorialHashIterative(value: bigint): bigint {
+    if (value < 0n) {
+        throw 'Value must be positive';
+    }
     if (value === 0n || value === 1n) {
         return 1n;
     }
